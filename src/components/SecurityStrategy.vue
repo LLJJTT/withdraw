@@ -7,7 +7,7 @@
 					<div style="clear:both"></div>
 				</li>
 				<li class="second_li">
-					<span class="name">大额提现截留:</span><input class="num" type="text" value="1000"><i>元</i>
+					<span class="name">大额提现截留:</span><input class="num" type="text" value="2000"><i>元</i>
 					<div style="clear:both"></div>
 				</li>
 				<li class="third_li">
@@ -61,7 +61,7 @@
 		border: none;
 		box-shadow: none;
 		width: 10%;
-		background: #000;
+		background: #556833;
 		color: #fff;
 		font-size: 15px;
 		font-weight: bold;
