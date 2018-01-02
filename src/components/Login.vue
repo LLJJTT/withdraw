@@ -33,36 +33,38 @@
 		},
 		methods:{
 			async login (){
-        const params = {phone: 'userName',password:'passWord'};
-        const res = await getToken(params);
-        console.log(res.data.text)
-        alert(res.data.text)
-
-				this.$router.push('/index')
-				
-				if (this.userName=='') {
-					alert('请输入用户名！');
+				if (!this.userName) {
+					this.$message.error('用户名不能为空');
+          return false;
 				}
-				else if(this.passWord==''){
-					alert('请输入密码！');
+				if(!this.passWord) {
+					this.$message.error('密码不能为空');
+          return false;
 				}
-				else{
-					axios.post('http://61.181.255.99/api/v1/login', {phone: 'userName',password:'passWord'})
-					.then(res => {
-						if (res.data.status==0) {
-							alert(res.data.message);
-							this.token = res.data.data.token;
-							sessionStorage.setItem('token',this.token);
-							console.log(res.data.data.token);
-							console.log(this.userName);
-							console.log(this.passWord);
+				else {
+          const params = {phone: 'userName',password:'passWord'};
+          const res = await getToken(params);
+          if (res && res.data) {
+            this.$alert('登录成功这个时候存session，cookie啥的，完了跳index', '', {
+            confirmButtonText: '确定'
+          });          
+        }
+					// axios.post('http://61.181.255.99/api/v1/login', {phone: 'userName',password:'passWord'})
+					// .then(res => {
+					// 	if (res.data.status==0) {
+					// 		alert(res.data.message);
+					// 		this.token = res.data.data.token;
+					// 		sessionStorage.setItem('token',this.token);
+					// 		console.log(res.data.data.token);
+					// 		console.log(this.userName);
+					// 		console.log(this.passWord);
 
-							this.$router.push('/index')
-						}
-						else{
-							console.log(res.data);
-						}
-					})
+					// 		this.$router.push('/index')
+					// 	}
+					// 	else{
+					// 		console.log(res.data);
+					// 	}
+					// })
 				}
 				
 			}
