@@ -31,6 +31,7 @@ q:before, q:after {
     content: none;
 }
 table {
+    overflow: hidden;
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -58,6 +59,7 @@ body {
         font-family: 黑体;
         font-size: 14px;
         color:#fff;
+        background: #2c2f3e;
         
     }
     a{

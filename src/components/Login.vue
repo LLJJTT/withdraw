@@ -4,7 +4,7 @@
 			<h2>Welcome</h2>	
 			<form>
 				<div class="form_tr">
-					<i class="ico_uesr"></i><input  v-model="userName" type="number" placeholder="uesr" class="border" />
+					<i class="ico_uesr"></i><input  v-model="userName" type="number" placeholder="uesname" class="border" />
 				</div>
 				<div class="form_tr">
 					<i class="ico_password"></i><input v-model="passWord" type="password" placeholder="password" class="border" />
@@ -44,14 +44,15 @@
 				else {
           const params = {phone: 'userName',password:'passWord'};
           const res = await getToken(params);
+          // ajax请求成功
           if (res && res.data) {
-            this.$alert('登录成功这个时候存session，cookie啥的，完了跳index', '', {
-            confirmButtonText: '确定'
-          });          
+            this.$alert('登录成功这个时候存session，cookie啥的，完了跳index');
+            this.$router.push('/index');
+          }         
         }
 					// axios.post('http://61.181.255.99/api/v1/login', {phone: 'userName',password:'passWord'})
 					// .then(res => {
-					// 	if (res.data.status==0) {
+					// 	if (res.data.status==0) { 
 					// 		alert(res.data.message);
 					// 		this.token = res.data.data.token;
 					// 		sessionStorage.setItem('token',this.token);
@@ -69,44 +70,13 @@
 				
 			}
 		}
-	}
 </script>
 
 <style scoped>
 *,*:before,*:after {box-sizing: border-box;outline: none;user-select: none;}
 html,body {height: 100%; overflow: hidden;}
-body {
-  background-color: #F5F5F5;
-  font-size: 12px;
-  -webkit-font-smoothing: antialiased;
-  font-family: arial, sans-serif;
-}
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,iframe {margin: 0;padding: 0;}
-img,article,
-aside,details,figcaption,figure,footer,header,menu,nav,section,summary,time,mark,audio,video {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 { font-size: 100%;}
-fieldset,
-img {border: 0;}
-address,
-caption,
-cite,
-dfn,
-em,
-th,
-var,
-i,
-em {font-style: normal;font-weight: normal;}
-ol,
-ul {list-style: none;}
+
+
 a {text-decoration: none;color: inherit;}
 a:hover {text-decoration: none;}
 a,

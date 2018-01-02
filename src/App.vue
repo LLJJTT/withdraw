@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="head">
-      <h1>提现管理系统</h1>
-    </div> -->
-    <!-- <NavBar></NavBar>
-    <Login></Login> -->
     <router-view></router-view>
     <div style="clear:both"></div>
   </div>
@@ -32,18 +27,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-// #head{
-//       width: 100%;
-//       height: 80px;
-//       background:#a26c3e;
-//       border-bottom:1px solid #f5f5f5;
-// }
-// #head h1{
-//   line-height:80px;
-//   font-weight:bold;
-//   color:#fff;
-//   font-size:25px;
-// }
 </style>
 
 

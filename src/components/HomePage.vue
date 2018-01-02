@@ -61,7 +61,7 @@
           <el-table-column
             prop="user"
             label="用户"
-            width="100">
+            width="80">
           </el-table-column>
           <el-table-column
             prop="now_money"
@@ -71,7 +71,7 @@
           <el-table-column
             prop="today_money"
             label="今日流水"
-            width="100">
+            width="120">
           </el-table-column>
       </el-table>
        </div>
@@ -81,8 +81,8 @@
 <script>
 export default {
   name: 'HomePage',
-  data() {
-        return {
+    data() {
+      return {
           tableData: [{
             from: '爱游油',
             time:'2016-05-04',
@@ -296,6 +296,7 @@ export default {
   }
   .reload_div .re_ul li:nth-child(2){
     float: right;
+    box-shadow: 10px 10px 5px #888888;
   }
   .td1{
     margin-top: 30px;

@@ -36,7 +36,7 @@ export default {
 	methods: {
 		handlClick (e) {
 			this.tab = e
-			console.log(this.tab)
+			// console.log(this.tab)
 		}
 	}
 }
@@ -55,7 +55,7 @@ export default {
 		color: #fff;
 		display: block;
 		font-size: 16px;
-		border-bottom: 1px solid #fff;
+		/*border-bottom: 1px solid #fff;*/
   		border-radius: 10px;
   		
   		margin-left: 10px;
@@ -75,9 +75,8 @@ export default {
 		cursor: pointer;
 	}
 	.tab ul .active{
-		background: #346390;
+		background: #FDAC22;
 	}
 	.tab ul .active a {
-		color: #DD812E;
 	}
 </style>
