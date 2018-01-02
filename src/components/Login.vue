@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import axios from 'axios'
+  import axios from 'axios'
+  import { getAll } from '../service/'
 	export default{
 		data () {
 			return{
@@ -62,6 +63,11 @@ import axios from 'axios'
 				}
 				
 			},
+		},
+		async mounted () {
+      const res = await getAll();
+      console.log(res.data.text)
+      alert(res.data.text)
 		}
 	}
 </script>
