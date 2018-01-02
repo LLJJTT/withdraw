@@ -4,6 +4,7 @@ import HomePage from '@/components/HomePage'
 import AccountManage from '@/components/AccountManage'
 import SecurityStrategy from '@/components/SecurityStrategy'
 import Details from '@/components/Details'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -12,8 +13,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/HomePage',// 直接跳转的路径
-      component: HomePage
+      redirect: '/Login',// 直接跳转的路径
+      component: Login
     },
     {
     	path:'/HomePage',//就是加载的路径名字
