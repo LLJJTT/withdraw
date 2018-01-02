@@ -27,10 +27,14 @@ import axios from 'axios'
 			return{
 				userName:'',
 				passWord:'',
+				token:'',
 			}
 		},
 		methods:{
 			login:function(data){
+
+				this.$router.push('/index')
+				
 				if (this.userName=='') {
 					alert('请输入用户名！');
 				}
@@ -38,18 +42,23 @@ import axios from 'axios'
 					alert('请输入密码！');
 				}
 				else{
-					axios.post('http://192.168.1.111:3000/mock/22/api/v1/login', {account_name: 'userName',account_password:'passWord'})
+					axios.post('http://61.181.255.99/api/v1/login', {phone: 'userName',password:'passWord'})
 					.then(res => {
-						if (res.data.status==1) {
+						if (res.data.status==0) {
 							alert(res.data.message);
-							sessionStorage.setItem('userName',this.userName);
-							sessionStorage.setItem('passWord',this.passWord);
+							this.token = res.data.data.token;
+							sessionStorage.setItem('token',this.token);
+							console.log(res.data.data.token);
+							console.log(this.userName);
+							console.log(this.passWord);
+
 							this.$router.push('/index')
 						}
 						else{
 							console.log(res.data);
 						}
 					})
+					.catch()
 				}
 				
 			},

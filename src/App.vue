@@ -31,12 +31,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  // background:#449095;
-  // padding-bottom:100px;
-  // background:url(./assets/bg.jpeg);
-  // background-position:center;
-  // background-repeat:no-repeat;
-  // background-size:cover;
 }
 // #head{
 //       width: 100%;
