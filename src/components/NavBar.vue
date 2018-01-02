@@ -15,19 +15,19 @@ export default {
 		return {
 			tabs: [{
 				name: '首页',
-				path: '/',
+				path: 'HomePage',
 				key: 1
 			},{
 				name: '账户管理',
-				path: '/AccountManage',
+				path: 'AccountManage',
 				key: 2
 			},{
 				name: '安全策略',
-				path: '/SecurityStrategy',
+				path: 'SecurityStrategy',
 				key: 3
 			},{
 				name: '详单',
-				path: '/Details',
+				path: 'Details',
 				key: 4
 			}],
 			tab: 1

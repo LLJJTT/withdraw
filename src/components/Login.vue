@@ -44,7 +44,7 @@ import axios from 'axios'
 							alert(res.data.message);
 							sessionStorage.setItem('userName',this.userName);
 							sessionStorage.setItem('passWord',this.passWord);
-							this.$router.push('/homePage')
+							this.$router.push('/index')
 						}
 						else{
 							console.log(res.data);

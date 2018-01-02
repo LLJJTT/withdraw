@@ -3,8 +3,8 @@
     <!-- <div id="head">
       <h1>提现管理系统</h1>
     </div> -->
-    <NavBar></NavBar>
-    <Login></Login>
+    <!-- <NavBar></NavBar>
+    <Login></Login> -->
     <router-view></router-view>
     <div style="clear:both"></div>
   </div>
