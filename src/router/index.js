@@ -27,9 +27,13 @@ export default new Router({
       component: Index,
       children: [
         {
-         path:'HomePage',//就是加载的路径名字
-         name:'HomePage',//随便起的
-         component:HomePage//跟import名字一样 
+          path:'',//就是加载的路径名字
+          redirect: '/index/HomePage'// 直接跳转的路径
+        },
+        {
+          path:'HomePage',//就是加载的路径名字
+          name:'HomePage',//随便起的
+          component:HomePage//跟import名字一样 
         },
         {
           path: 'AccountManage',

@@ -3,7 +3,7 @@
 	  		<div class="tab">
 	  			<ul>
 	  				<li v-for="item in tabs" :key="item.key" @click="handlClick(item.key)" :class="item.key == tab ? 'active' : ''">
-	  					<router-link :to="item.path">{{ item.name }}</router-link> 
+	  					<router-link :to="'/index/'+item.path">{{ item.name }}</router-link> 
 	  				</li>
 	  			</ul>
 	  		</div>
