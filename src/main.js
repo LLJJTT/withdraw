@@ -4,10 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-// 加载axios = ajax 模块
-import axios from 'axios'
-Vue.prototype.$http = axios
-
 // 加载element_ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'

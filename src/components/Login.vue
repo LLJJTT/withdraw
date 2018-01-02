@@ -22,7 +22,7 @@
 
 <script>
   import axios from 'axios'
-  import { getAll } from '../service/'
+  import { getToken } from '../service/'
 	export default{
 		data () {
 			return{
@@ -64,8 +64,8 @@
 				
 			},
 		},
-		async mounted () {
-      const res = await getAll();
+		async login () {
+      const res = await getToken();
       console.log(res.data.text)
       alert(res.data.text)
 		}
