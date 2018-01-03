@@ -13,26 +13,26 @@
 		    <el-table-column
 		      prop="ac_name"
 		      label="账户名"
-		      width="180">
+		      width="200">
 		    </el-table-column>
 		    <el-table-column
 		      prop="use_money"
 		      label="可用余额"
-		      width="180">
+		      width="200">
 		    </el-table-column>
 		    <el-table-column
 		      prop="token"
 		      label="access_token"
-		      width="140">
+		      width="200">
 		    </el-table-column>
 		     <el-table-column
 		      prop="rate"
 		      label="费率"
-		      width="100">
+		      width="160">
 		    </el-table-column>
 		    <el-table-column 
 		      label="操作"
-		      width="80">
+		      width="200">
 		    	<template slot-scope="scope">
 		        <el-button size="mini"
 		        type="danger">充值</el-button>
@@ -111,12 +111,15 @@
 
 <style scoped> 
 	.AccountManage{
+		width: 70%;
 		float: left;
+		position: relative;
+		margin-left: 232px;
 	}
 	.wrapper{
 		border-radius: 10px;
     	background:#3B5291;
-		margin:20px 0 0 150px;
+		margin:15px 0 0 0;
 		padding: 30px 0;
 	}
 	.table_manage{

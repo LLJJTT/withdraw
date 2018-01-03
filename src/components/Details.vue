@@ -36,7 +36,7 @@
 	     <el-table-column
 	      prop="send_number"
 	      label="该笔转账人数"
-	      width="40">
+	      width="80">
 	    </el-table-column>
 	     <el-table-column
 	      prop="summary"
@@ -95,8 +95,8 @@
     		const params = {token: this.token,page: this.page,page_size:8} 
     		const response = await getCashdetails(params);
     		if (response && response.data) {
-    			this.total_count = response.data.data.total_count;//总数量
-    			this.content = response.data.data.content;//详细数据
+    			// this.total_count = response.data.data.total_count;//总数量
+    			// this.content = response.data.data.content;//详细数据
     			// console.log(this.token);
     			console.log(this.total_count);//总数量
     		}
@@ -110,14 +110,15 @@
 
 <style lang="scss" >
 	#details{
-		margin:20px 0 0 100px;
+		margin-top: 15px;
+		margin-left:-200px;
 	    background:#3B5291;
 	    padding: 30px 0;
 	    border-radius: 10px;
 	    color: #fff;
 	    position: relative;
 		float: left;
-		width: 60%;
+		width: 80%;
 		height: 80%;
 
 	}

@@ -27,22 +27,22 @@
               <el-table-column
                 prop="from"
                 label="来源"
-                width="80">
+                width="100">
               </el-table-column>
               <el-table-column
                 prop="time"
                 label="时间"
-                width="120">
+                width="240">
               </el-table-column>
               <el-table-column
                 prop="name"
                 label="姓名"
-                width="80">
+                width="100">
               </el-table-column>
               <el-table-column
                 prop="amounts"
                 label="金额"
-                width="120">
+                width="90">
               </el-table-column>
             </el-table>
           </div>
@@ -206,20 +206,20 @@ export default {
   }
   .wrapper_left{
     float: left;
-    width: 40%;
-    margin:20px 0 0 100px;
+    width: 60%;
+    margin:15px 0 0 0;
     background:#3B5291;
     padding: 30px 0;
     border-radius: 10px;
     color: #fff;
     position: relative;
+    margin-left: -200px;
   }
   .jine_div{
     padding-bottom: 30px;
   }
   .wrapper_left .jine li{
     display: block;
-    /*background: #000;*/
     padding-bottom: 10px !important;
     width: 50%;
     margin: 0 auto;
@@ -240,13 +240,13 @@ export default {
     margin-left: 5px;
   }
   .wrapper_right{
-    width: 30%;
+    width: 40%;
     border-radius: 10px;
     background:#3B5291;
     float: right;
     position: relative;
     right: 100px;
-    margin-top:20px;
+    margin-top:15px;
     color: #fff;
     padding-bottom: 30px;
     
@@ -274,6 +274,9 @@ export default {
     border-right:1px solid #eceef5;
 
   }
+  .re_ul{
+    /*border-bottom: 1px solid #eceef5;*/
+  }
   .reload_div .re_ul li{
     color: #333;
     background: #fff;
@@ -296,7 +299,6 @@ export default {
   }
   .reload_div .re_ul li:nth-child(2){
     float: right;
-    box-shadow: 10px 10px 5px #888888;
   }
   .td1{
     margin-top: 30px;

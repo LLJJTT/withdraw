@@ -29,15 +29,16 @@
 	.securitystrategy{
 		width: 60%;
 		float: left;
-		margin-left: 5%;
+		position: relative;
+		margin-left: -200px;
 	}
 	.wrapper{
+		margin-top: 15px;
 		border-radius: 10px;
 		background: #3B5291;
 		color: #fff;
 		font-weight: bold;
 		font-size: 18px;
-		margin-top: 100px;
 		padding: 100px 50px;
 	}
 	.wrapper li{
@@ -45,8 +46,7 @@
 		margin: 0 auto;
 		display: block;
 		padding-bottom:20px;
-		/*background: #000;*/
-		border-bottom: 1px solid #f5f5f5;
+		border-bottom: 1px solid #bcb5b5;
 	}
 	.wrapper li:nth-child(2),li:nth-child(3){
 		margin-top: 50px;
