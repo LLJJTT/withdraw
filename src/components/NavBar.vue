@@ -67,7 +67,7 @@ export default {
 	.tab ul li a{
 		display: block;
 		width: 100%;
-		padding: 60px 0;
+		padding: 30px 0;
 	}
 	.tab ul li{
 		transition: 1.5s;

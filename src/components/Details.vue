@@ -68,8 +68,8 @@
     data() {
       return {
       	token:"",
-				total_count:"",
-				page: 1,
+		total_count:"",
+		page: 1,
         content: [{
 	      	happen_time: "",//交易时间
 	        cust_name: "",//经办人
@@ -87,12 +87,12 @@
     		// console.log(`每页 ${val} 条`);
     	},
       handleCurrentChange(val) {
-				this.page = val;
+			this.page = val;
   			this.getCashdetails();
       },
     	async getCashdetails (){
     		this.token = sessionStorage.getItem('token',this.token);
-    		const params = {token: this.token,page: this.page,page_size:5} 
+    		const params = {token: this.token,page: this.page,page_size:8} 
     		const response = await getCashdetails(params);
     		if (response && response.data) {
     			this.total_count = response.data.data.total_count;//总数量
@@ -111,14 +111,14 @@
 <style lang="scss" >
 	#details{
 		margin:20px 0 0 100px;
-    background:#3B5291;
-    padding: 30px 0;
-    border-radius: 10px;
-    color: #fff;
-    position: relative;
+	    background:#3B5291;
+	    padding: 30px 0;
+	    border-radius: 10px;
+	    color: #fff;
+	    position: relative;
 		float: left;
 		width: 60%;
-		height: 100%;
+		height: 80%;
 
 	}
 	.el-pagination__total{
