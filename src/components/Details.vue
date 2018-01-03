@@ -56,7 +56,8 @@
 	      @current-change="handleCurrentChange"
 	      :page-size="4"
 	      layout="total, prev, pager, next"
-	      :total="20">
+	      :total="parseInt(total_count)">
+	      <!--每页多少条++++总条数 -->
 	    </el-pagination>
 	  </div>
 	</div>
@@ -67,7 +68,7 @@
     data() {
       return {
       	token:"",
-      	total_page:"",
+      	total_count:"",
         content: [{
 	      	happen_time: "",//交易时间
 	        cust_name: "",//经办人
@@ -82,24 +83,23 @@
     },
     methods:{
     	handleSizeChange(val) {
-    		console.log(`每页 ${val} 条`);
+    		// console.log(`每页 ${val} 条`);
     	},
       handleCurrentChange(val) {
+
         console.log(`当前页: ${val}`);
+        this.content=[];
+  			this.getCashdetails();
       },
     	async getCashdetails (){
     		this.token = sessionStorage.getItem('token',this.token);
-    		const params = {token: this.token,page:2,page_size:4} 
+    		const params = {token: this.token,page:4,page_size:5} 
     		const response = await getCashdetails(params);
     		if (response && response.data) {
     			this.total_count = response.data.data.total_count;//总数量
-    			this.current_page = response.data.data.current_page;//当前页数
-    			this.total_page = response.data.data.total_page;//总页数
-    			// // this.page_size = response.data.data.page_size//一页数据的个数
     			this.content = response.data.data.content;//详细数据
-    			console.log(this.token);
-    			console.log(this.total_count);
-    			console.log(this.current_page);
+    			// console.log(this.token);
+    			console.log(this.total_count);//总数量
     		}
     	}
   	},
