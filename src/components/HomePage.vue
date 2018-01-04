@@ -203,15 +203,16 @@ export default {
   #HomePage{
     width: 70%;
     float: left;
+
   }
   .wrapper_left{
     float: left;
     width: 60%;
     margin:15px 0 0 0;
-    background:#3B5291;
+    background:#e6e6e6;
     padding: 30px 0;
     border-radius: 10px;
-    color: #fff;
+    color: #000;
     position: relative;
     margin-left: -200px;
   }
@@ -242,7 +243,7 @@ export default {
   .wrapper_right{
     width: 40%;
     border-radius: 10px;
-    background:#3B5291;
+    background:#e6e6e6;
     float: right;
     position: relative;
     right: 100px;

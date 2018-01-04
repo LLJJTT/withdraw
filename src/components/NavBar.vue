@@ -57,7 +57,7 @@ export default {
 		position: fixed;
 		width: 180px;
 	    height: 100%;
-	    background-color: #fafafa;
+	    background-color: #f2f2f2;
 	    border-right: 1px solid #eee;
 	}
 	.tab ul{
@@ -66,10 +66,10 @@ export default {
 	}
 	.tab ul li{
 		padding: 5px 20px;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid #aaa;
 		position: relative;
 		display: block;
-		font-size: 16px;
+		font-size: 14px;
 		text-align: center;
 	    height: 60px;
     	line-height: 60px;

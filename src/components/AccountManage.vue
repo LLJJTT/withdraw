@@ -118,7 +118,7 @@
 	}
 	.wrapper{
 		border-radius: 10px;
-    	background:#3B5291;
+		background: #e6e6e6;
 		margin:15px 0 0 0;
 		padding: 30px 0;
 	}

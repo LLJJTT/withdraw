@@ -27,7 +27,7 @@
 
 <style scoped> 
 	.securitystrategy{
-		width: 60%;
+		width: 80%;
 		float: left;
 		position: relative;
 		margin-left: -200px;
@@ -35,8 +35,8 @@
 	.wrapper{
 		margin-top: 15px;
 		border-radius: 10px;
-		background: #3B5291;
-		color: #fff;
+		background: #e6e6e6;
+		color: #201d1d;
 		font-weight: bold;
 		font-size: 18px;
 		padding: 100px 50px;
