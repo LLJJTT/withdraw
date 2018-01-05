@@ -39,8 +39,10 @@
 					padding:20px;
 				}
 				img:hover{
+					transition:1.5s;
 					background: #5F578F;
 					cursor:pointer;
+					border-radius:8px;
 				}
 			}
 		}

@@ -285,21 +285,21 @@ export default {
     text-align: center;
     font-weight: bold;
   }
-  .reload_div .re_ul li:nth-child(2){
-    cursor: pointer;
-  }
-  .reload_div .re_ul li:nth-child(2):hover{
-    transition: 1.5s;
-    background: #60888D;
-    color: #f5f5ff;
-  }
   .reload_div .re_ul li:first-child{
     float: left;
   }
   .reload_div .re_ul li:nth-child(2){
     float: right;
-    background: #d0d3e2;
+    background: #f4f4bd;
+    cursor: pointer;
+    color: #413151;
   }
+  .reload_div .re_ul li:nth-child(2):hover{
+    transition: 1.5s;
+    background: #cece9e;
+    color: #8462A9;
+  }
+ 
   .td1{
     margin-top: 30px;
     max-height: 565px;

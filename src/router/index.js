@@ -10,6 +10,9 @@ import Index from '@/components/Index'
 Vue.use(Router)
 
 export default new Router({
+  // 去掉默认link-active样式
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'active',
   mode: 'history',// 去掉hash #
   routes: [
     {
