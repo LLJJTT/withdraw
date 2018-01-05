@@ -2,9 +2,10 @@
 	<div id="NavBar">
 	  		<div class="tab">
 	  			<ul>
-	  				<li v-for="item in tabs" :key="item.key" @click="handlClick(item.key)" :class="item.key == tab ? 'active' : ''"><img :src="item.src" alt="">
-	  					<router-link :to="'/index/'+item.path">{{ item.name }}</router-link> <div style="clear:both;"></div>
-	  				</li>
+	  				<router-link :to="'/index/'+item.path" v-for="item in tabs" :key="item.key" @click="handlClick(item.key)" :class="item.key == tab ? 'active' : ''" >
+	  					<img :src="item.src" alt="">
+		  					{{ item.name }}
+		  			</router-link> 
 	  			</ul>
 	  		</div>
 	</div>
@@ -64,18 +65,20 @@ export default {
 	    border-top: 1px solid #eee;
 	    padding-left: 5%;
 	}
-	.tab ul li{
-		padding: 5px 20px;
+	.tab ul a{
+		padding: 5px 35px;
 		border-bottom: 1px solid #aaa;
 		position: relative;
-		display: block;
 		font-size: 14px;
 		text-align: center;
 	    height: 60px;
     	line-height: 60px;
-
+    	display: inline-block;
+		color: #2d2f33;
+		transition: 1.5s;
+		cursor: pointer;
 	}
-	.tab ul li img{
+	.tab ul a img{
 		display: inline-block;
 	    width: 24px;
 	    height: 24px;
@@ -83,20 +86,9 @@ export default {
 	    padding-right: 7px;
 
 	}
-	.tab ul li:not(:first-child){
-	}
-	.tab ul li a{
-		display: inline-block;
-		color: #2d2f33;
-	}
-	.tab ul li{
-		transition: 1.5s;
-		cursor: pointer;
+	.tab ul a:not(:first-child){
 	}
 	.tab ul .active{
 		background: #F9CB91;
-		color: #fc9538;
-	}
-	.tab ul .active a {
 	}
 </style>

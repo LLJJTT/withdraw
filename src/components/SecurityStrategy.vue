@@ -71,4 +71,10 @@
 	.suff{
 		background: #ff0;
 	}
+	@media(max-width:1200px){
+		.securitystrategy{
+			width: 60%;
+			margin-left: 300px;
+		}
+	}
 </style>

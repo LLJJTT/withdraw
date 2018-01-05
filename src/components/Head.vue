@@ -36,7 +36,11 @@
 					width:30px;
 					height:30px;
 					vertical-align:middle;
-					padding:25px 0;
+					padding:20px;
+				}
+				img:hover{
+					background: #5F578F;
+					cursor:pointer;
 				}
 			}
 		}
@@ -66,7 +70,6 @@
 				margin-right:6px;
 			}
 		}
-
 	}
 
 </style>

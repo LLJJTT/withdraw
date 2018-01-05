@@ -18,7 +18,7 @@
              <el-table
               :data="tableData"
               border
-              height="400"
+              height ="400"
               style="width: 100%">
                <el-table-column
                 type="index"
@@ -52,7 +52,7 @@
          <el-table class="td1"
           :data="tableData1"
           border
-          height="400px"
+          height = "600"
           style="width: 100%">
            <el-table-column
             type="index"
@@ -201,20 +201,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #HomePage{
-    width: 70%;
+    width: 80%;
     float: left;
+    position: relative;
+    margin-left: 232px;
 
   }
   .wrapper_left{
     float: left;
-    width: 60%;
+    width:50%;
     margin:15px 0 0 0;
     background:#e6e6e6;
     padding: 30px 0;
     border-radius: 10px;
     color: #000;
-    position: relative;
-    margin-left: -200px;
+   
   }
   .jine_div{
     padding-bottom: 30px;
@@ -241,13 +242,10 @@ export default {
     margin-left: 5px;
   }
   .wrapper_right{
-    width: 40%;
     border-radius: 10px;
     background:#e6e6e6;
-    float: right;
-    position: relative;
-    right: 100px;
-    margin-top:15px;
+    float: left;
+    margin:15px 0 0 150px;
     color: #fff;
     padding-bottom: 30px;
     
@@ -300,11 +298,22 @@ export default {
   }
   .reload_div .re_ul li:nth-child(2){
     float: right;
+    background: #d0d3e2;
   }
   .td1{
     margin-top: 30px;
     max-height: 565px;
     overflow: auto;
+  }
+  @media(max-width:1200px){
+    #HomePage{
+      width: 80%;
+    }
+    .wrapper_left{
+    }
+    .wrapper_right{
+      margin-left:60px;
+    }
   }
 </style>
 
