@@ -1,5 +1,6 @@
 <template>
     <div id="details">
+      <!-- 导出Excel -->
       <div class="tab">
         <el-button type="primary" class="goto" @click="dialogFormVisible = true">导出<i class="el-icon-upload el-icon--right"></i></el-button>
         <el-dialog title="输入要导出的数据个数" :visible.sync="dialogFormVisible">
@@ -14,8 +15,8 @@
           </div>
         </el-dialog>
       </div>
-
-            <el-table
+      <!-- 表格数据 -->
+      <el-table
         :data="content"
         border
         max-height= "600"
@@ -24,6 +25,37 @@
             type="index"
             width="40">
         </el-table-column>
+        <el-table-column type="expand">
+          <template slot-scope="props">
+            <el-form label-position="left" inline class="demo-table-expand">
+              <el-form-item label="交易时间:">
+                <span>{{ props.row.happen_time }}</span>
+              </el-form-item>
+              <el-form-item label="经办人:">
+                <span>{{ props.row.cust_name }}</span>
+              </el-form-item>
+              <el-form-item label="订单号:">
+                <span>{{ props.row.batch_no }}</span>
+              </el-form-item>
+              <el-form-item label="账号:">
+                <span>{{ props.row.acct_no }}</span>
+              </el-form-item>
+              <el-form-item label="转出总金额:">
+                <span>{{ props.row.amount }}</span>
+              </el-form-item>
+              <el-form-item label="该笔转账人数:">
+                <span>{{ props.row.send_number }}</span>
+              </el-form-item>
+              <el-form-item label="转账备注:">
+                <span>{{ props.row.summary }}</span>
+              </el-form-item>
+              <el-form-item label="转账结果:">
+                <span>{{ props.row.response }}</span>
+              </el-form-item>
+            </el-form>
+          </template>
+        </el-table-column>
+        
         <el-table-column
           prop="happen_time"
           label="交易时间"
@@ -65,6 +97,7 @@
           width="140">
         </el-table-column>
       </el-table>
+      <!-- 分页 -->
       <div class="block">
         <el-pagination
         background
@@ -171,6 +204,26 @@
           font-weight:bold;
         }
       }
+    }
+    .demo-table-expand {
+      font-size: 0;
+      display:block;
+      margin-top:0rem;
+    }
+    .demo-table-expand .el-form-item {
+      margin-right: 0;
+      margin-bottom: 0;
+      width: 38%;
+      text-align:left;
+      margin-top: 10px;
+      margin-left: 1%;
+    }
+    .el-table__expand-icon{
+      color:#f63300 !important;
+      
+    }
+    .el-icon-arrow-right:before{
+      color:#f63300 !important;
     }
     @media(max-width:1200px){
       #details{
