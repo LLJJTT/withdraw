@@ -16,7 +16,7 @@
         </el-dialog>
       </div>
       <!-- 表格数据 -->
-      <el-table
+      <el-table class="table_details"
         :data="content"
         border
         max-height= "600"
@@ -179,7 +179,7 @@
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     #details{
       margin-top: 15px;
       margin-left:-200px;
@@ -215,16 +215,24 @@
       margin-bottom: 0;
       width: 38%;
       text-align:left;
-      margin-top: 10px;
       margin-left: 1%;
     }
-    .el-table__expand-icon{
-      color:#f63300 !important;
-      
+    .el-form-item__content {
+      line-height: 40px;
+      position: relative;
+      font-size: 13px;
     }
-    .el-icon-arrow-right:before{
-      color:#f63300 !important;
+    .el-form-item__label{
+      width: 100px;
+      color:#99a9bf !important;
+      font-size:13px;
     }
+    .table_details .el-icon-arrow-right:before{
+      color:red;
+      font-size:6px;
+      font-weight:bold;
+    }
+   
     @media(max-width:1200px){
       #details{
         width:60%;

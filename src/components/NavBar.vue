@@ -69,7 +69,7 @@ export default {
     display: inline-block;
     width: 100%;
     padding: 10px 0;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #e6e6e6;
     position: relative;
     font-size: 14px;
     color: #2d2f33;

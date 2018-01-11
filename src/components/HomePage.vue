@@ -4,7 +4,7 @@
           <div class="jine_div">
               <ul class="jine">
                    <li>当前准备金&nbsp;总余额:</li>
-                   <li><span>6666666666.66</span><span>/元</span></li>
+                   <li><span>{{total_balance}}</span><span>/元</span></li>
                </ul>
           </div>
           <div class="head_table">
@@ -16,31 +16,31 @@
                 </ul>
               </div>
              <el-table
-              :data="tableData"
+              :data="accountFrom"
               border
-              height ="400"
+              max-height ="400"
               style="width: 100%">
                <el-table-column
                 type="index"
                 width="40">
               </el-table-column>
               <el-table-column
-                prop="from"
+                prop="source_account"
                 label="来源"
                 width="100">
               </el-table-column>
               <el-table-column
-                prop="time"
+                prop="happen_time"
                 label="时间"
                 width="240">
               </el-table-column>
               <el-table-column
-                prop="name"
+                prop="resever_name"
                 label="姓名"
                 width="100">
               </el-table-column>
               <el-table-column
-                prop="amounts"
+                prop="count"
                 label="金额"
                 width="90">
               </el-table-column>
@@ -52,7 +52,7 @@
          <el-table class="td1"
           :data="tableData1"
           border
-          height = "600"
+          max-height = "600"
           style="width: 100%">
            <el-table-column
             type="index"
@@ -79,122 +79,38 @@
 </template>
 
 <script>
+import { getIndexdetails } from '../service'
 export default {
   name: 'HomePage',
     data() {
       return {
-          tableData: [{
-            from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          }, {
-            from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          }, {
-            from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          }, {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          },
-          {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          },
-          {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          },
-          {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          },
-          {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          },
-          {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
-          },
-          {
-           from: '爱游油',
-            time:'2016-05-04',
-            name: '王小虎',
-            amounts: '666.00'
+          total_balance:'',
+          accountFrom: [{
+            source_account: '',
+            happen_time:'',
+            resever_name: '',
+            count: ''
           }],
           tableData1:[{
             user:'老张',
             now_money:'6666.00',
             today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
-          },{
-            user:'老张',
-            now_money:'6666.00',
-            today_money:'-100.00'
           }]
+      }
+    },
+    methods:{
+      // 获取数据
+      async getIndexdetails(){
+        const response = await getIndexdetails();
+        if (response.data.status==0) {
+          this.accountFrom = response.data.data.account;
+          this.total_balance = response.data.data.total_balance;
         }
       }
+    },
+    created:function(){
+      this.getIndexdetails();
+    }
 }
 </script>
 

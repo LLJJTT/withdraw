@@ -2,7 +2,7 @@
 	<div class="AccountManage">
 		<div class="wrapper">
 			<el-table class="table_manage"
-		    :data="tableData2"
+		    :data="accountall"
 		    border
 		    max-height= "600"
 		    style="width: 100%">
@@ -11,17 +11,17 @@
 		      width="40">
 		    </el-table-column>
 		    <el-table-column
-		      prop="ac_name"
+		      prop="name"
 		      label="账户名"
 		      width="220">
 		    </el-table-column>
 		    <el-table-column
-		      prop="use_money"
+		      prop="balance"
 		      label="可用余额"
 		      width="220">
 		    </el-table-column>
 		    <el-table-column
-		      prop="token"
+		      prop="access_token"
 		      label="access_token"
 		      width="220">
 		    </el-table-column>
@@ -44,67 +44,33 @@
 </template>
 
 <script>
+import { getAccountAll } from '../service/'
 	export default{
 		data() {
 		    return {
-			        tableData2: [{
-			          ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-
-			        }, {
-			          ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			         ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			          ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			          ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			          ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			         ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			         ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			         ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			         ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }, {
-			         ac_name: '王小虎',
-			          use_money: '800.00￥',
-			          token: 'token',
-			          rate: '0.002'
-			        }]
+		        accountall: [
+		         {
+		          name: '',
+		          balance: '',
+		          access_token: '',
+		          rate: '0.002'
+		        }]
 		    }
+  		},
+  		methods:{
+  			// 获取数据
+  			async getAccountAll() {
+  				this.token = sessionStorage.getItem('token',this.token);
+  				const params = {token:this.token};
+				const response = await getAccountAll(params);
+  				if (response.data.status==0) {
+  					this.accountall = response.data.data
+  					console.log(response.data)
+  				}
+  			}
+  		},
+  		created:function(){
+  			this.getAccountAll();
   		}
 	}
 </script>
